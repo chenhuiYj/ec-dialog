@@ -1,11 +1,7 @@
 require("./index.html");
 //引入sass
+require("./src/sass/com.scss");
 import Vue from 'vue'
-/**
- * @description 启动App
- * @returns {{name: string}}
- * @constructor
- */
 import dialog from './src/js/components/index';
 Vue.use(dialog)
 let App = new Vue({
@@ -18,12 +14,19 @@ let App = new Vue({
     mounted(){
         this.$confirm({
             title:'提示',
-            content:'这里是提示内容'
+            content:'这里是提示内容',
+            submitText:'提交',
+            cancelText:'返回'
         }).then(()=>{
-            this.name='守候'
-            alert(this.name)
+            this.$alert({
+                title:'提示2',
+                content:'这里是提示内容2'
+            }).then(()=>{
+                this.name='守候'
+                alert(this.name)
+            })
         }).catch((err)=>{
-            console.log(err)
+            alert(err)
         })
 
     }

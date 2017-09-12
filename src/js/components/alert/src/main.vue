@@ -8,7 +8,6 @@
                 </div>
                 <div class="ec-box-buttons">
                     <span class="ec-btn-success" @click="success">{{submitText}}</span>
-                    <span class="ec-btn-cancel" @click="cancel">{{cancelText}}</span>
                 </div>
             </div>
         </div>
@@ -18,12 +17,11 @@
     export default {
         data () {
             return {
-                name:'ec-comfirm',
+                name:'ec-alert',
                 show: false,
                 title: '提示',
                 content: '',
-                submitText: '确定',
-                cancelText: '取消'
+                submitText: '确定'
             }
         },
         computed: {},
@@ -32,14 +30,12 @@
         methods: {
             success () {
                 this.show = false;
-            },
-            cancel () {
-                this.show = false;
             }
         }
     }
 </script>
 <style lang="scss" scoped>
+
     .ec {
         background: rgba(00, 00, 00, .5);
         position: fixed;
@@ -47,7 +43,6 @@
         top: 0;
         width: 100%;
         height: 100%;
-        z-index: 9999;
         .ec-box {
             width: 80%;
             max-width: 400px;

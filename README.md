@@ -1,40 +1,37 @@
-# ec-slide
+# ec-dialog
 
-#### 个人练手项目，基于vue2.0开发的图片轮播项目，目前功能不是很强大，还没有上传npm,功能也很少。以后再逐一完善
+#### 个人练手项目，基于vue2.0开发的弹窗项目，目前功能不是很强大，还没有上传npm,功能也很少。以后再逐一完善
 
 ## 使用方法
 
-### 引入文件 比如./src/js/components/index.js
+### 在入口文件在全局引入组件
 
-      import SlideImg from './ec-slide.vue'
-      const ecslide={
-          install:function (Vue) {
-              Vue.component('ecSlide',SlideImg)
-          }
+      import dialog from './src/js/components/index';
 
-      }
-      export default ecslide;
-### 在入口文件在全局引入上面引入的文件
+      Vue.use(dialog)
 
-      import ecslide from './src/js/components/index';
-
-      Vue.use(ecslide);
-
-### html页面引用
-
-    <ec-slide :list='list' :autoplay="true" :type="'slide'" :option="true" :time="4000" :sildetype="'ease'" :arrowurl="'http://i2.kiimg.com/1949/098c291e8db16ab5.jpg '" :arrowsize="'40,20'" :direction="'top'"></ec-slide>
-
+### 使用
+    this.$confirm({
+        title:'提示',
+        content:'这里是提示内容',
+        submitText:'提交',
+        cancelText:'返回'
+    }).then(()=>{
+        this.$alert({
+            title:'提示2',
+            content:'这里是提示内容2'
+        }).then(()=>{
+            this.name='守候'
+            alert(this.name)
+        })
+    }).catch((err)=>{
+        alert(err)
+    })
 ### 配置说明
-* list-图片列表  Array  [{src:'url',href:'https://www.baidu.com'},{src:'url',href:'https://www.baidu.com'}]
-* autoplay-是否自动播放  布尔                       default  false
-* type-轮播方式    string ‘transparent’ 'slide'    default   slide
-* option-对应点  布尔                              default   false
-* time-轮播间隔时间   int                          default   4000
-* sildetype-动画样式 ‘ease’                        default   'ease'
-* arrowurl-箭头图片链接  string
-* arrowsize-箭头尺寸 string   ‘width,height’
-* direction-切换方向  string   'left' 'top'         default   left
-
+* title-标题
+* content-内容
+* submitText-提交按钮文字（默认‘确定’）
+* cancelText-取消按钮文字（默认‘取消’）
 
 
 
