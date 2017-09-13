@@ -33,6 +33,8 @@
 * submitText-提交按钮文字（默认‘确定’）
 * cancelText-取消按钮文字（默认‘取消’）
 
+## LICENSE
+MIT
 
 
 
