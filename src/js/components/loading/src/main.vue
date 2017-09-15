@@ -1,14 +1,15 @@
 <template>
     <transition name="ec">
-        <div v-if="show" class="ec">
+        <div v-if="show" class="ec-loading">
             <div class="ec-box">
                 <div class="ec-box-inner">
-                    <div class="ec-title" v-if="title">{{title}}</div>
+                    <div class="ec-animate">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <div class="ec-content">{{content}}</div>
-                </div>
-                <div class="ec-box-buttons">
-                    <span class="ec-btn-success" @click="success">{{submitText}}</span>
-                    <span class="ec-btn-cancel" @click="cancel">{{cancelText}}</span>
                 </div>
             </div>
         </div>
@@ -18,7 +19,7 @@
     export default {
         data () {
             return {
-                name:'ec-comfirm',
+                name:'ec-loading',
                 show: false,
                 title: '提示',
                 content: '',
@@ -30,18 +31,24 @@
         mounted () {
         },
         methods: {
-            success () {
-                this.show = false;
-            },
-            cancel () {
-                this.show = false;
+            close(){
+                this.show=false;
             }
         }
     }
 </script>
-<style lang="scss" scoped>
-    .ec {
-        background: rgba(00, 00, 00, .5);
+<style lang="scss">
+    @keyframes loading-base {
+        from {
+            opacity: 1;
+        }
+        to{
+            opacity: .3;
+        }
+    }
+
+    .ec-loading {
+        background: rgba(00, 00, 00, .4);
         position: fixed;
         left: 0;
         top: 0;
@@ -56,52 +63,43 @@
             left: 0;
             right: 0;
             margin: auto;
-            background: #fff;
             box-sizing: border-box;
             padding: 20px;
             border-radius: 6px;
 
         }
-        .ec-title {
-            padding-left: 0;
-            margin-bottom: 0;
-            font-size: 16px;
-            font-weight: 700;
-            height: 18px;
-            color: #333;
+        .ec-animate{
+            font-size: 0;
+            text-align: center;
+            span{
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                background: #fff;
+                -webkit-animation: loading-base .5s infinite;
+                &:nth-of-type(1){
+                    animation-delay: .1s;
+                }
+                &:nth-of-type(2){
+                    animation-delay: .2s;
+                }
+                &:nth-of-type(3){
+                    animation-delay: .3s;
+                }
+                &:nth-of-type(4){
+                    animation-delay: .4s;
+                }
+            }
         }
         .ec-content {
+            text-align: center;
             padding: 14px 0;
             line-height: 24px;
-            color: #48576a;
-            font-size: 14px;
-        }
-        .ec-box-buttons {
-            text-align: right;
-        }
-        .ec-btn-success {
-            background: #20a0ff;
-            border-color: #20a0ff;
-            display: inline-block;
-            line-height: 1;
-            white-space: nowrap;
-            cursor: pointer;
+            font-size: 16px;
             color: #fff;
-            margin: 0;
-            padding: 10px 15px;
-            border-radius: 4px;
-        }
-        .ec-btn-cancel {
-            display: inline-block;
-            line-height: 1;
-            white-space: nowrap;
-            cursor: pointer;
-            background: #fff;
-            border: 1px solid #c4c4c4;
-            color: #1f2d3d;
-            margin: 0;
-            padding: 10px 15px;
-            border-radius: 4px;
         }
     }
     .ec-enter {

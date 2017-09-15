@@ -1,6 +1,6 @@
 <template>
     <transition name="ec">
-        <div v-if="show" class="ec-alert">
+        <div v-if="show" class="ec-confirm">
             <div class="ec-box">
                 <div class="ec-box-inner">
                     <div class="ec-title" v-if="title">{{title}}</div>
@@ -8,6 +8,7 @@
                 </div>
                 <div class="ec-box-buttons">
                     <span class="ec-btn-success" @click="success">{{submitText}}</span>
+                    <span class="ec-btn-cancel" @click="cancel">{{cancelText}}</span>
                 </div>
             </div>
         </div>
@@ -17,11 +18,12 @@
     export default {
         data () {
             return {
-                name:'ec-alert',
+                name:'ec-confirm',
                 show: false,
                 title: '提示',
                 content: '',
-                submitText: '确定'
+                submitText: '确定',
+                cancelText: '取消'
             }
         },
         computed: {},
@@ -30,18 +32,22 @@
         methods: {
             success () {
                 this.show = false;
+            },
+            cancel () {
+                this.show = false;
             }
         }
     }
 </script>
 <style lang="scss">
-    .ec-alert {
+    .ec-confirm {
         background: rgba(00, 00, 00, .4);
         position: fixed;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
+        z-index: 9999;
         .ec-box {
             width: 80%;
             max-width: 400px;
