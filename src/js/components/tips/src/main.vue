@@ -53,7 +53,7 @@
             box-sizing: border-box;
             padding: 10px;
             border-radius: 6px;
-            background: rgba(00,00,00,.4);
+            background: rgba(00,00,00,.6);
 
         }
         .ec-content {

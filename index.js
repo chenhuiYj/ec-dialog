@@ -12,16 +12,16 @@ let App = new Vue({
         }
     },
     mounted(){
-        // this.$ec_confirm({
-        //     title:'提示',
-        //     content:'这里是提示内容',
-        //     submitText:'提交',
-        //     cancelText:'返回'
-        // }).then(()=>{
-        //     this.name='守候'
-        //     alert(this.name)
-        // }).catch((err)=>{
-        // })
+        this.$ec_confirm({
+            title:'提示',
+            content:'这里是提示内容',
+            submitText:'提交',
+            cancelText:'返回'
+        }).then(()=>{
+            this.name='守候'
+            alert(this.name)
+        }).catch((err)=>{
+        })
         // this.$ec_alert({
         //         title:'提示2',
         //         content:'这里是提示内容2'
@@ -32,11 +32,11 @@ let App = new Vue({
         // this.$ec_tips({
         //     content:'点赞成功'
         // })
-        let loadingContent = this.$ec_loading({
-            content: '玩命加载中'
-        });
-        console.log(loadingContent)
-        setTimeout(()=>{loadingContent.close();},2000)
+        // let loadingContent = this.$ec_loading({
+        //     content: '玩命加载中'
+        // });
+        // console.log(loadingContent)
+        // setTimeout(()=>{loadingContent.close();},2000)
 
 
 

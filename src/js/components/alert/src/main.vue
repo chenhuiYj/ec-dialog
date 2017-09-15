@@ -7,7 +7,7 @@
                     <div class="ec-content">{{content}}</div>
                 </div>
                 <div class="ec-box-buttons">
-                    <span class="ec-btn-success" @click="success">{{submitText}}</span>
+                    <span class="ec-btn-success" @click.stop="success">{{submitText}}</span>
                 </div>
             </div>
         </div>

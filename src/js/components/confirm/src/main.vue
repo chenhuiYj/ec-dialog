@@ -1,14 +1,14 @@
 <template>
     <transition name="ec">
-        <div v-if="show" class="ec-confirm">
+        <div v-if="show" class="ec-confirm" @click="cancel">
             <div class="ec-box">
                 <div class="ec-box-inner">
                     <div class="ec-title" v-if="title">{{title}}</div>
                     <div class="ec-content">{{content}}</div>
                 </div>
                 <div class="ec-box-buttons">
-                    <span class="ec-btn-success" @click="success">{{submitText}}</span>
-                    <span class="ec-btn-cancel" @click="cancel">{{cancelText}}</span>
+                    <span class="ec-btn-success" @click.stop="success">{{submitText}}</span>
+                    <span class="ec-btn-cancel" @click.stop="cancel">{{cancelText}}</span>
                 </div>
             </div>
         </div>
