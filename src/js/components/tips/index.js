@@ -25,7 +25,7 @@ let initInstance = ()=>{
     document.body.appendChild(instance.$el);
 }
 
-let Confirm = (options={}) => {
+let Tips = (options={}) => {
     initInstance();
     // 将单个 confirm instance 的配置合并到默认值中
     merge(instance.$data, options);
@@ -45,4 +45,4 @@ let Confirm = (options={}) => {
     });
 
 }
-export default Confirm;
+export default Tips;

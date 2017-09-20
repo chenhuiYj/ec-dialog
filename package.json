@@ -1,6 +1,6 @@
 {
   "name": "ec-dialog",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "ec-dialog",
   "dependencies": {
     "loadjs": "^3.5.0",

@@ -1,6 +1,6 @@
 let webpack = require('webpack');
 let path =require("path");
-let serverHost = "192.168.31.13";
+let serverHost = "192.168.31.90";
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry:{

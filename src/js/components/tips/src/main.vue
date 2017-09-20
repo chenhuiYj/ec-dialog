@@ -23,9 +23,11 @@
 
         computed: {},
         mounted () {
-            setTimeout(()=>{
-                this.close();
-            },this.time)
+            if(this.time){
+                setTimeout(()=>{
+                    this.close();
+                },this.time)
+            }
         },
         methods: {
             close(){
@@ -44,7 +46,6 @@
         z-index: 9999;
         .ec-box {
             width: 80%;
-            max-width: 200px;
             top: 200px;
             position: absolute;
             left: 0;

@@ -7,12 +7,41 @@
 </head>
 <body>
 <div id="app">
-    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%"/>
-    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%"/>
-    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%"/>
-    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%"/>
-    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%"/>
-    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%"/>
+    <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%" @click="show=true"/>
+    <ec-dialog :show="show" :title="'提示'">
+        <div class="test">
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+            <div class="btn">
+                <ec-button :type="'main'" :value="'确定'" @click="submit"></ec-button>
+                <ec-button :type="'cancel'" :value="'取消'" @click="close"></ec-button>
+            </div>
+        </div>
+    </ec-dialog>
 </div>
 </body>
 </html>
