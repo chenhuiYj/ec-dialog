@@ -43,12 +43,14 @@
     console.log(loadingContent)
     //两秒后关闭
     setTimeout(()=>{loadingContent.close();},2000)
-### 配置说明
+#### 配置说明
 * title-标题
 * content-内容
 * submitText-提交按钮文字（默认‘确定’）
 * cancelText-取消按钮文字（默认‘取消’）
-#### dialog
+
+### dialog
+
     <ec-dialog :show="show" :title="'提示'">
             <div class="test">
                 <table>
