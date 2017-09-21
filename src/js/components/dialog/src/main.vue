@@ -45,10 +45,10 @@
             top: 0;
             width: 100%;
             height: 100%;
+            touch-action: none;
         }
         .ec-box {
             width: 80%;
-            max-width: 400px;
             top: 100px;
             position: absolute;
             left: 0;

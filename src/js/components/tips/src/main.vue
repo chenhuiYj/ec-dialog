@@ -46,6 +46,7 @@
         z-index: 9999;
         .ec-box {
             width: 80%;
+            max-width: 400px;
             top: 200px;
             position: absolute;
             left: 0;

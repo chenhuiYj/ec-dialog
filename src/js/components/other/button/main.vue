@@ -30,6 +30,7 @@
         border-radius: 4px;
         background: none;
         outline: none;
+        -webkit-appearance: none;
         &.ec-btn-main{
             background: #09f;
         }
