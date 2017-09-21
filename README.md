@@ -111,6 +111,8 @@ title:标题
 ### 按钮配置说明
 type:按钮类名  main(蓝)  |  cancel(白)  |  danger(红)  |  success(绿)
 
+size:按钮尺寸  large（大型）  small(小型)   不传就是中等
+
 value:按钮文字
 ## LICENSE
 MIT

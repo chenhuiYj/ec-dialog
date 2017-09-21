@@ -1,12 +1,12 @@
 <template>
-<input type="button" :value="value" class="ec-button" :class="{'ec-btn-main':type==='main','ec-btn-cancel':type==='cancel','ec-btn-danger':type==='danger','ec-btn-success':type==='success'}" @click="doClick"/>
+<input type="button" :value="value" class="ec-button" :class="{'ec-btn-main':type==='main','ec-btn-cancel':type==='cancel','ec-btn-danger':type==='danger','ec-btn-success':type==='success','ec-btn-large':size==='large','ec-btn-small':size==='small'}" @click="doClick"/>
 </template>
 <script>
     export default{
         data(){
             return {}
         },
-        props:['type','value'],
+        props:['type','value','size'],
         computed: {},
         methods: {
             doClick(){
@@ -44,6 +44,16 @@
         }
         &.ec-btn-success{
             background: #0f0;
+        }
+        &.ec-btn-large{
+            width: 104px;
+            height: 40px;
+            line-height: 40px;
+        }
+        &.ec-btn-small{
+            width: 64px;
+            height: 28px;
+            line-height: 28px;
         }
     }
 </style>
