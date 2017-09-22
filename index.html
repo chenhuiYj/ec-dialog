@@ -8,7 +8,7 @@
 <body>
 <div id="app">
     <img src="http://i2.kiimg.com/1949/dc149abbf35fe1f3.jpg" width="100%" @click="show=true"/>
-    <ec-dialog :show="show" :title="'提示'">
+    <ec-dialog :show="show" :title="'提示'" @close="close">
         <div class="test">
             <table>
                 <tr>

@@ -104,14 +104,25 @@ js代码
                     this.show=false;
                 }
             },
-### 配置说明
+#### 配置说明
+
 show:是否显示
 
 title:标题
-### 按钮配置说明
+
+#### 事件
+
+close：窗口关闭时触发
+
+### button
+#### 使用方式
+
+<ec-button :type="'main'" :value="'确定'" @click="submit"></ec-button>
+
+#### 配置说明
 type:按钮类名  main(蓝)  |  cancel(白)  |  danger(红)  |  success(绿)
 
-size:按钮尺寸  large（大型）  small(小型)   不传就是中等
+size:按钮尺寸  large（大型）  small(小型)    默认中等
 
 value:按钮文字
 ## LICENSE

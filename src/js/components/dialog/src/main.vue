@@ -3,6 +3,7 @@
         <div class="ec-big" v-if="inShow">
             <div class="ec-dialog" @click="close"></div>
             <div class="ec-box">
+                <a href="javascript:;" class="ec-close" @click.stop="close"></a>
                 <div class="ec-title" v-if="title">{{title}}</div>
                 <div class="ec-content">
                     <slot></slot>
@@ -32,6 +33,7 @@
         methods: {
             close(){
                 this.inShow = false;
+                this.$emit('close')
             }
         }
     }
@@ -46,6 +48,16 @@
             width: 100%;
             height: 100%;
             touch-action: none;
+        }
+        .ec-close{
+            display: block;
+            width: 16px;
+            height: 16px;
+            background: url("../../../../images/icon-close1.png") no-repeat center;
+            background-size: 100%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
         .ec-box {
             width: 80%;
