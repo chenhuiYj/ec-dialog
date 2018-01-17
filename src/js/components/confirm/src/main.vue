@@ -90,6 +90,7 @@
             margin: 0;
             padding: 10px 15px;
             border-radius: 4px;
+            font-size: 16px;
         }
         .ec-btn-cancel {
             display: inline-block;
@@ -102,6 +103,7 @@
             margin: 0;
             padding: 10px 15px;
             border-radius: 4px;
+            font-size: 16px;
         }
     }
     .ec-enter {
