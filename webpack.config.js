@@ -1,6 +1,6 @@
 let webpack = require('webpack');
 let path =require("path");
-let serverHost = "192.168.31.90";
+let serverHost = "192.168.31.2";
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry:{
@@ -63,7 +63,7 @@ module.exports = {
     devServer: {
         contentBase: './',
         host: serverHost,
-        port: 9093, //默认9090
+        port: 9099, //默认9090
         inline: true, //可以监控js变化
         hot: true//热启动
     },

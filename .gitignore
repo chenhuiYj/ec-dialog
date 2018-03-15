@@ -4,4 +4,5 @@ node_modules
 *.log
 dist
 webpack.config.babel.js
+webpack.config.js
 src/sass/lib/
