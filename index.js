@@ -3,7 +3,7 @@ require("./index.html");
 require("./src/sass/index.scss");
 require("./src/sass/com.scss");
 import Vue from 'vue'
-import dialog from './src/js/components/index';
+import dialog from 'ec-dialog';
 Vue.use(dialog);
 let App = new Vue({
     el: '#app',
@@ -24,7 +24,7 @@ let App = new Vue({
         }
     },
     mounted(){
-        console.log(dialog)
+        //console.log(dialog)
         this.$ec_confirm({
             title:'提示',
             content:'这里是提示内容',
