@@ -35,9 +35,9 @@
             background: #09f;
         }
         &.ec-btn-cancel{
-            color: #333;
+            color: #777;
             background: #fff;
-            border: 1px solid #333;
+            border: 1px solid #999;
         }
         &.ec-btn-danger{
             background: #f00;

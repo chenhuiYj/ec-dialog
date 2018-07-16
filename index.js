@@ -3,7 +3,7 @@ require("./index.html");
 require("./src/sass/index.scss");
 require("./src/sass/com.scss");
 import Vue from 'vue'
-import dialog from 'ec-dialog';
+import dialog from './src/js/components/index';
 Vue.use(dialog);
 let App = new Vue({
     el: '#app',
