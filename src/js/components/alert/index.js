@@ -29,6 +29,7 @@ let initInstance = ()=>{
 }
 
 let Alert = (options={}) => {
+
     //初始化
     initInstance();
     // 将单个 confirm instance 的配置合并到默认值（instance.$data，就是main.vue里面的data）中

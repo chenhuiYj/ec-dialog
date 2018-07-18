@@ -1,13 +1,13 @@
 <template>
     <transition name="ec">
-        <div v-if="show" class="ec-alert">
+        <div v-if="show" class="ec-alert" :class="[theme]">
             <div class="ec-box">
                 <div class="ec-box-inner">
-                    <div class="ec-title" v-if="title">{{title}}</div>
+                    <div class="ec-title" v-if="title" :style="{'background':theme?color:'none'}">{{title}}</div>
                     <div class="ec-content">{{content}}</div>
                 </div>
                 <div class="ec-box-buttons">
-                    <span class="ec-btn-success" @click.stop="success">{{submitText}}</span>
+                    <span class="ec-btn-success" @click.stop="success" :style="{'background':color}">{{submitText}}</span>
                 </div>
             </div>
         </div>
@@ -21,11 +21,16 @@
                 show: false,
                 title: '提示',
                 content: '',
-                submitText: '确定'
+                submitText: '确定',
+                theme:false,
+                color:'#20a0ff'
             }
         },
         computed: {},
         mounted () {
+            if(!this.theme){
+                this.color='';
+            }
         },
         methods: {
             success () {
@@ -59,7 +64,7 @@
         .ec-title {
             padding-left: 0;
             margin-bottom: 0;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 700;
             height: 18px;
             color: #333;
@@ -68,7 +73,7 @@
             padding: 14px 0;
             line-height: 24px;
             color: #48576a;
-            font-size: 14px;
+            font-size: 0.875rem;
         }
         .ec-box-buttons {
             text-align: right;
@@ -84,7 +89,7 @@
             margin: 0;
             padding: 10px 15px;
             border-radius: 4px;
-            font-size: 16px;
+            font-size: 1rem;
         }
         .ec-btn-cancel {
             display: inline-block;
@@ -97,7 +102,32 @@
             margin: 0;
             padding: 10px 15px;
             border-radius: 4px;
-            font-size: 16px;
+            font-size: 1rem;
+        }
+        &.tips{
+            background: rgba(00, 00, 00, .4);
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            .ec-box {
+                padding: 0;
+                overflow: hidden;
+            }
+            .ec-title {
+                height: 50px;
+                background: #20a0ff;
+                color: #fff;
+                line-height: 50px;
+                padding-left: 20px;
+            }
+            .ec-box-buttons {
+                padding:0 20px 20px 0;
+            }
+            .ec-content {
+                padding: 14px 20px;
+            }
         }
     }
     .ec-enter {

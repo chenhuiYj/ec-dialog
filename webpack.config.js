@@ -1,6 +1,6 @@
 let webpack = require('webpack');
 let path =require("path");
-let serverHost = "192.168.31.2";
+let serverHost = getIPAdress();
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry:{
@@ -74,3 +74,19 @@ module.exports = {
         extensions:['.js','.scss','.vue','.json']
     }
 };
+/**
+ * @description 获取本地IP地址
+ * @returns {string|*}
+ */
+function getIPAdress() {
+    let interfaces = require('os').networkInterfaces();
+    for (let devName in interfaces) {
+        let iface = interfaces[devName];
+        for (let i = 0; i < iface.length; i++) {
+            let alias = iface[i];
+            if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+                return alias.address;
+            }
+        }
+    }
+}
