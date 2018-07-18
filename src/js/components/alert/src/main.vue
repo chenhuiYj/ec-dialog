@@ -64,7 +64,7 @@
         .ec-title {
             padding-left: 0;
             margin-bottom: 0;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 700;
             height: 18px;
             color: #333;
@@ -73,7 +73,7 @@
             padding: 14px 0;
             line-height: 24px;
             color: #48576a;
-            font-size: 0.875rem;
+            font-size: 14px;
         }
         .ec-box-buttons {
             text-align: right;
@@ -89,7 +89,7 @@
             margin: 0;
             padding: 10px 15px;
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 16px;
         }
         .ec-btn-cancel {
             display: inline-block;
@@ -102,7 +102,7 @@
             margin: 0;
             padding: 10px 15px;
             border-radius: 4px;
-            font-size: 1rem;
+            font-size: 16px;
         }
         &.tips{
             background: rgba(00, 00, 00, .4);
