@@ -10,7 +10,7 @@ let App = new Vue({
     data(){
         return {
             'name': 'index',
-            show:true
+            show:false
         }
     },
     methods:{
@@ -39,7 +39,8 @@ let App = new Vue({
                 title:'提示2',
                 content:'这里是提示内容2',
                 color:'#f33',
-                theme:'tips'
+                theme:'tips',
+                animation:'left'
             }).then(()=>{
                 this.name='守候'
                 alert(this.name)

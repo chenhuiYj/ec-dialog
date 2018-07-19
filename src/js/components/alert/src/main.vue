@@ -1,5 +1,5 @@
 <template>
-    <transition name="ec">
+    <transition :name="animation">
         <div v-if="show" class="ec-alert" :class="[theme]">
             <div class="ec-box">
                 <div class="ec-box-inner">
@@ -23,7 +23,8 @@
                 content: '',
                 submitText: '确定',
                 theme:false,
-                color:'#20a0ff'
+                color:'#20a0ff',
+                animation:'ec'
             }
         },
         computed: {},
@@ -136,7 +137,6 @@
             transform:scale(0);
         }
     }
-
     .ec-enter-active {
         transition: opacity .4s;
         .ec-box {
@@ -151,5 +151,27 @@
     }
     .ec-leave-active {
         opacity: 0;
+    }
+
+    .left-enter {
+        .ec-box {
+            //transform:scale(0);
+            left: -100%;
+        }
+    }
+    .left-enter-active {
+        transition: all 2s;
+        .ec-box {
+            transition: all 2s;
+        }
+    }
+    .left-leave-active{
+        transition: all 2s;
+        .ec-box {
+            transition: all 2s;
+        }
+    }
+    .left-leave-active {
+        //opacity: 0;
     }
 </style>
