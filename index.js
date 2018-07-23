@@ -35,12 +35,13 @@ let App = new Vue({
         //     alert(this.name);
         // }).catch((err)=>{
         // })
+
         this.$ec_alert({
                 title:'提示2',
                 content:'这里是提示内容2',
                 color:'#f33',
                 theme:'tips',
-                animation:'left'
+                animation:'left-bounce'
             }).then(()=>{
                 this.name='守候'
                 alert(this.name)
