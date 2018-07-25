@@ -1,9 +1,9 @@
 <template>
-    <transition name="ec">
-        <div v-if="show" class="ec-confirm" @click="cancel">
+    <transition :name="animation">
+        <div v-if="show" class="ec-confirm" @click="cancel" :class="[theme]">
             <div class="ec-box">
                 <div class="ec-box-inner">
-                    <div class="ec-title" v-if="title">{{title}}</div>
+                    <div class="ec-title" v-if="title" :style="{'background':theme?color:'none'}">{{title}}</div>
                     <div class="ec-content">{{content}}</div>
                 </div>
                 <div class="ec-box-buttons">
@@ -23,7 +23,10 @@
                 title: '提示',
                 content: '',
                 submitText: '确定',
-                cancelText: '取消'
+                cancelText: '取消',
+                theme:false,
+                color:'#20a0ff',
+                animation:'ec'
             }
         },
         computed: {},
@@ -40,6 +43,7 @@
     }
 </script>
 <style lang="scss">
+    @import "../../../../sass/animation";
     .ec-confirm {
         background: rgba(00, 00, 00, .4);
         position: fixed;
@@ -105,27 +109,30 @@
             border-radius: 4px;
             font-size: 16px;
         }
-    }
-    .ec-enter {
-        opacity: 0;
-        .ec-box {
-            transform:scale(0);
+        &.tips{
+            background: rgba(00, 00, 00, .4);
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            .ec-box {
+                padding: 0;
+                overflow: hidden;
+            }
+            .ec-title {
+                height: 50px;
+                background: #20a0ff;
+                color: #fff;
+                line-height: 50px;
+                padding-left: 20px;
+            }
+            .ec-box-buttons {
+                padding:0 20px 20px 0;
+            }
+            .ec-content {
+                padding: 14px 20px;
+            }
         }
-    }
-
-    .ec-enter-active {
-        transition: opacity .4s;
-        .ec-box {
-            transition: transform .4s;
-        }
-    }
-    .ec-leave-active{
-        transition: opacity .2s;
-        .ec-box {
-            transition: transform .2s;
-        }
-    }
-    .ec-leave-active {
-        opacity: 0;
     }
 </style>

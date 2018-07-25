@@ -29,15 +29,9 @@
 }
 
 .left-bounce-enter-active {
-  transition: all 2s;
+  transition: all 1s;
   .ec-box {
     animation: bounce-in-l 1s ease;
-  }
-}
-.left-bounce-leave-active{
-  transition: all 2s;
-  .ec-box {
-    animation: bounce-in-l 1s ease reverse;
   }
 }
 /*left-bounce end*/
@@ -49,15 +43,9 @@
 }
 
 .right-bounce-enter-active {
-  transition: all 2s;
+  transition: all 1s;
   .ec-box {
     animation: bounce-in-r 1s ease;
-  }
-}
-.right-bounce-leave-active{
-  transition: all 2s;
-  .ec-box {
-    animation: bounce-in-r 1s ease reverse;
   }
 }
 /*right-bounce end*/
@@ -70,15 +58,9 @@
 }
 
 .top-bounce-enter-active {
-  transition: all 2s;
+  transition: all 1s;
   .ec-box {
     animation: bounce-in-t 1s ease;
-  }
-}
-.top-bounce-leave-active{
-  transition: all 2s;
-  .ec-box {
-    animation: bounce-in-t 1s ease reverse;
   }
 }
 /*top-bounce end*/
@@ -92,15 +74,9 @@
 }
 
 .bottom-bounce-enter-active {
-  transition: all 2s;
+  transition: all 1s;
   .ec-box {
     animation: bounce-in-b 1s ease;
-  }
-}
-.bottom-bounce-leave-active{
-  transition: all 2s;
-  .ec-box {
-    animation: bounce-in-b 1s ease reverse;
   }
 }
 /*bottom-bounce end*/
