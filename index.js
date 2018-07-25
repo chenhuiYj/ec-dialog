@@ -2,6 +2,7 @@ require("./index.html");
 //引入sass
 require("./src/sass/index.scss");
 require("./src/sass/com.scss");
+require("./src/sass/ec-css-animate.css");
 import Vue from 'vue'
 import dialog from './src/js/components/index';
 Vue.use(dialog);
@@ -40,7 +41,7 @@ let App = new Vue({
                 content:'这里是提示内容2',
                 color:'#f33',
                 theme:'tips',
-                animation:'left-bounce'
+                animation:'bottom-bounce'
             }).then(()=>{
                 this.name='守候'
                 alert(this.name)
