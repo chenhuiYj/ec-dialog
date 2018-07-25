@@ -35,7 +35,6 @@ let App = new Vue({
         //     alert(this.name);
         // }).catch((err)=>{
         // })
-
         this.$ec_alert({
                 title:'提示2',
                 content:'这里是提示内容2',

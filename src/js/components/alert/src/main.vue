@@ -41,6 +41,7 @@
     }
 </script>
 <style lang="scss">
+    @import "../../../../sass/animation";
     .ec-alert {
         background: rgba(00, 00, 00, .4);
         position: fixed;
@@ -129,70 +130,6 @@
             .ec-content {
                 padding: 14px 20px;
             }
-        }
-    }
-    .ec-enter {
-        opacity: 0;
-        .ec-box {
-            transform:scale(0);
-        }
-    }
-    .ec-enter-active {
-        transition: opacity .4s;
-        .ec-box {
-            transition: transform .4s;
-        }
-    }
-    .ec-leave-active{
-        transition: opacity .2s;
-        .ec-box {
-            transition: transform .2s;
-        }
-    }
-    .ec-leave-active {
-        opacity: 0;
-    }
-
-    .left-bounce-enter {
-        .ec-box {
-            transform: translate3d(-3000px, 0, 0);
-        }
-    }
-
-    .left-bounce-enter-active {
-        transition: all 2s;
-        .ec-box {
-            animation: bounce-in-l 1s ease;
-        }
-    }
-    .left-bounce-leave-active{
-        transition: all 2s;
-        .ec-box {
-            animation: bounce-in-l 1s ease reverse;
-        }
-    }
-
-    @keyframes bounce-in-l {
-        0%, 60%, 75%, 90%, to {
-            animation-timing-function: cubic-bezier(.215, .61, .355, 1)
-        }
-        0% {
-            opacity: 0;
-            transform: translate3d(-3000px, 0, 0)
-        }
-        60% {
-            opacity: 1;
-            transform: translate3d(25px, 0, 0)
-        }
-        75% {
-            transform: translate3d(-10px, 0, 0)
-        }
-        90% {
-            transform: translate3d(5px, 0, 0)
-        }
-        to {
-            -webkit-transform: none;
-            transform: none
         }
     }
 </style>
