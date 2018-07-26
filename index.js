@@ -26,37 +26,35 @@ let App = new Vue({
     },
     mounted(){
         //console.log(dialog)
-        this.$ec_confirm({
-            title:'提示',
-            content:'这里是提示内容',
-            submitText:'提交',
-            cancelText:'返回',
-            theme:'tips',
-            animation:'bottom-bounce'
-        }).then(()=>{
-            this.name='守候'
-            alert(this.name);
-        }).catch((err)=>{
+        // this.$ec_confirm({
+        //     title:'提示',
+        //     content:'这里是提示内容',
+        //     submitText:'提交',
+        //     cancelText:'返回',
+        //     theme:'tips',
+        //     color:'#f33'
+        // }).then(()=>{
+        //     this.name='守候'
+        //     alert(this.name);
+        // }).catch((err)=>{
+        // })
+        this.$ec_alert({
+                title:'提示2',
+                content:'这里是提示内容2',
+                animation:'right-bounce',
+                color:'#f33',
+                theme:'tips'
+            }).then(()=>{
+                this.name='守候'
+                alert(this.name)
         })
-
-        // this.$ec_alert({
-        //         title:'提示2',
-        //         content:'这里是提示内容2',
-        //         color:'#f33',
-        //         theme:'tips',
-        //         animation:'bottom-bounce'
-        //     }).then(()=>{
-        //         this.name='守候'
-        //         alert(this.name)
-        // })
-        // this.$ec_tips({
-        //     content:'点赞成功'
-        // })
-        // let loadingContent = this.$ec_loading({
-        //     content: '玩命加载中'
-        // });
-        //console.log(loadingContent)
-        //setTimeout(()=>{loadingContent.close();},2000)
-        this.show=true;
+        this.$ec_tips({
+            content:'点赞成功'
+        })
+        let loadingContent = this.$ec_loading({
+            content: '玩命加载中'
+        });
+        setTimeout(()=>{loadingContent.close();},2000)
+        //this.show=true;
     }
 });
