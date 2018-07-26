@@ -2,9 +2,8 @@ require("./index.html");
 //引入sass
 require("./src/sass/index.scss");
 require("./src/sass/com.scss");
-require("./src/sass/ec-css-animate.css");
 import Vue from 'vue'
-import dialog from './src/js/components/index';
+import dialog from 'ec-dialog';
 Vue.use(dialog);
 let App = new Vue({
     el: '#app',
@@ -25,6 +24,7 @@ let App = new Vue({
         }
     },
     mounted(){
+
         //console.log(dialog)
         // this.$ec_confirm({
         //     title:'提示',
@@ -41,20 +41,20 @@ let App = new Vue({
         this.$ec_alert({
                 title:'提示2',
                 content:'这里是提示内容2',
-                animation:'right-bounce',
                 color:'#f33',
-                theme:'tips'
+                theme:'tips',
+                animation:'right-bounce'
             }).then(()=>{
                 this.name='守候'
                 alert(this.name)
         })
-        this.$ec_tips({
-            content:'点赞成功'
-        })
-        let loadingContent = this.$ec_loading({
-            content: '玩命加载中'
-        });
-        setTimeout(()=>{loadingContent.close();},2000)
+        // this.$ec_tips({
+        //     content:'点赞成功'
+        // })
+        // let loadingContent = this.$ec_loading({
+        //     content: '玩命加载中'
+        // });
+        // setTimeout(()=>{loadingContent.close();},2000)
         //this.show=true;
     }
 });
